@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+  
+  <body>
+
+    <button>Hello</button>
+    <button class="js-button">Second button</button>
+
+    <script>
+      /*
+      document.body.innerHTML = 'hello'; //document object modeluje web stranicu
+      document.title = "Good job!";
+      */
+     
+      console.log(document.body); //document.body omogucava nam da implementiramo html elemete unutar JS (kombinuje JS i html (kontrola web stranice))
+      console.log(typeof document.body); //takodje konvertuje html elemente u js objekte
+      console.log(document.body.innerHTML); // kontrolise sve html elemente unutar body
+
+      // document.body.innerHTML = "Changed"; //celokupan html kod unutar body je promenjen samo u 'changed'
+
+      //document.body.innerHTML = '<button> Good job! </button>';
+
+      console.log(document.querySelector('button')); //koristimo da "uhvatimo" neki html element (npr PRVI button element iz html)
+
+      document.querySelector('button').innerHTML = "Changed";  //svaki html element ima .innerHTML property (sad je html element js objekat)
+
+      console.log(document.querySelector('.js-button')); //selektujemo preko klase koja je kao labela 
+
+      const buttonElement = document.querySelector('.js-button');
+
+    </script>
+  </body>
+</html>

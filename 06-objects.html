@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+  
+  <body>
+    <script>
+      const product = {
+        name: 'shirt', //moze i ['name']: 'shirt'
+        price: 1090,
+
+        rating:{        //moze i kao objekat unutar objekta (ugnjezdeni objekti)
+          stars: 4.5,
+          count: 85
+        },
+
+        fun: function func1(){    //a moze i funkcija unutar objekta
+          console.log("Function inside object!");
+        }
+      }
+
+      
+      console.log(product);
+      console.log(product.name);
+
+      product.name = 'shoes'
+      console.log(product.name); //moze i product['name'] umesto product.name // koristi se ako imamo ime tipa: delivery-time , 
+                                 //pa zbog - ce da brljavi, a korisno je i npr: product['price1'+'price2']
+
+      product.someProperty = 1997;
+      delete product.price;
+
+      console.log(product);
+      product.fun();
+
+      console.log(JSON.stringify(product));
+      jsonString= JSON.stringify(product);
+      const object2=JSON.parse(jsonString);
+      console.log(object2);
+
+      console.log('hello'.length); // mozemo da uradimo .length jer JS ima tzc AUTO-BOX, autormatski wrappuje u specal object i onda mozemo da pozivamo metode
+
+      const obj1 = { //objekti su reference
+        message: 'hello'
+      }
+      const obj2=obj1; // ne pravi kopiju objekta nego kopiju reference (oba ukazuju na isto)
+      obj2.message= 'GOOD JOB';
+      console.log(obj1.message); //menja message u oba objekta jer su iste reference 
+
+      //!!! console.log(object3 === object2) // ne mozemo direktno da uporedjujemo objekte, jer zapravo uporedjujemo reference
+
+      const obj3={
+        message: 'message3',
+        price3: 183
+      };
+      const {message, price3} = obj3; // pravi promenljivu message i price3 kojoj dodeljuje vrednosti obj3.message i obj3, price3
+      console.log(message);
+      console.log(price3);
+
+      const obj4={
+       // message:message     ako properti ima isto ime kao promenljiva, ne mora duplo nego samo ime navedemo i uzima istu vrednost
+        message, // properti unutar objekta obj4 ima isto ime i vredost kao promenljiva message
+        /* method: function fun1(){
+          console.log('function1 bla bla');
+        }
+        */
+        method(){  //ili ovaj nacin ili onaj, ovaj kraci i podseca na cLike jezike
+          console.log('function1 bla bla');
+        }
+      }
+
+
+    </script>
+  </body>
+</html>

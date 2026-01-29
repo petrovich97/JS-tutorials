@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart</title>
+  </head>
+  
+  <body>
+
+    <button onclick="
+      console.log('Cart quantity: '+cartQuantity); //console.log('Cart quantity: ${cartQuantity}'); //bolje kao, al nece nesto da radi ( radi li ` znak a ne ' )
+      "> Show Quantity </button>                        
+    <button onclick="
+      cartQuantity++;
+      alert ('Added one more!');
+      "> Add to Cart </button>
+    <button onclick="
+      cartQuantity+=2;
+      alert ('Added 2 more!');
+    "> +2 </button>
+    <button onclick="
+      cartQuantity+=3;
+      alert ('Added 3 more!');
+    "> +3 </button>
+    <button onclick="
+      cartQuantity = 0;
+      alert ('Cart reset!');
+    "> Reset Cart </button>
+
+
+    <script>
+      
+      let cartQuantity = 0;
+     
+
+    </script>
+  </body>
+</html>
