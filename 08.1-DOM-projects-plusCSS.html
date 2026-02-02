@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM PROJECTS</title>
+  </head>
+  
+  <style>
+
+    body {
+      font-family: Arial;
+    }
+
+
+    .subscribe-button{
+      border: none;
+      background-color: black;
+      color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+
+
+    .is-subscribed{
+      background-color: rgb(92, 113, 136);
+      color: black;
+    }
+
+
+    .cost-input{
+      font-size: 15px;
+      padding: 10px;
+
+    } 
+
+
+    .calculate-button{
+      background-color: rgb(22, 92, 22);
+      color: white;
+      padding: 12px 15px; /* prva je vertikalna druga horizontalna vrednost*/
+      border: none;
+      font-size: 15px; 
+      cursor: pointer;
+    }
+    
+
+  </style>
+
+  <body>
+
+    <p> YouTube Subscribe Button</p>
+    <button onclick="
+      subscribe();
+    " class="js-subscribe-button subscribe-button">Subscribe</button> <!-- dodata jos jedna klasa za CSS-->
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Order > 40 => Total: order + 10$</p>
+    <p>Order < 40 => Shipping is free.</p>
+    <input placeholder="Cost of order" class="js-cost-input cost-input"  onkeydown="
+      handleEnter(event);
+    ">
+    <button onclick="
+      calculateTotal();
+    " class="calculate-button">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+    <script>
+      /*    //// cisto informativno
+      window.document
+      window.console.log   
+      window.alert
+      */
+      function subscribe(){
+
+        const butttonSub = document.querySelector('.js-subscribe-button');
+
+        if(butttonSub.innerText === 'Subscribe'){ //bolje nego innerHTML jer ignorise razmak
+           butttonSub.innerHTML = 'Subscribed';
+           butttonSub.classList.add('is-subscribed');
+        }else{
+           butttonSub.innerHTML = 'Subscribe';
+           butttonSub.classList.remove('is-subscribed');
+        }
+      }
+
+      function calculateTotal(){
+        const inputEl = document.querySelector('.js-cost-input');
+        let cost = Number(inputEl.value); //dodajemo konverziju jer je po defaultu string
+
+        if(cost<40){
+          cost+= 10;
+        }
+        document.querySelector('.js-total-cost').innerHTML=`Total cost: $ ${cost} `;
+      }
+
+      function handleEnter(event){
+        if(event.key ==='Enter'){
+        calculateTotal();
+      } 
+      }
+      
+    </script>
+  </body>
+</html>
