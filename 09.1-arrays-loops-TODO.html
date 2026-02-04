@@ -2,22 +2,27 @@
 <html>
   <head>
     <title>ToDo List</title>
+    <link rel="stylesheet" href="CSS/09.1-arrays-loops-TODO.css">
 
   </head>
 
   <body>
     <p>Todo List</p>
 
-    <input placeholder="ToDo name" 
-       class="js-name-input">
+    <div class="todo-input-grid">
+      <input placeholder="ToDo name" 
+        class="js-name-input name-input">
 
 
-    <button onclick="
-       addTodo();
-    ">Add</button>
+      <input type="date" class="js-due-date-input due-date-input">   
 
 
-    <div class="js-todo-list">text</div>
+      <button onclick="
+        addTodo();
+      " class="add-todo-button">Add</button>
+    </div>
+
+    <div class="js-todo-list todo-grid">text</div>
 
 
     <script src="JS/09.1-arrays-loops-TODO.js"></script>
