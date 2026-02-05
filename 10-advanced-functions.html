@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced functions</title>
+
+  </head>
+
+  <body>
+    <script>
+/*
+      function greeting(){
+        console.log('hello');
+      }      
+
+      greeting();
+
+      const num = 2;
+      const fun1 = function(){
+        console.log('hello2');
+      };
+
+      console.log(fun1);
+
+      fun1();
+
+
+      const obj1 = {
+        num: 2,
+        fun: function greeting(){
+          console.log("hello3");
+        }
+      }
+
+      function display(param){
+        console.log(param);
+      }
+
+
+      display(2);
+
+      function run(param){
+        param();
+      }
+
+
+      run(function (){    //callback ... funkcija unutar funkcije
+        console.log('hello4');
+
+       
+      });
+*/
+/*
+      setTimeout(function(){     // funckija koja poziva funkciju u buducnosti (1. param..function, ce se pozvati za 2. parametar milisekundi)
+        console.log('timeout');
+      }, 3000);
+
+      console.log('next line'); //asinhrono kodiranje... prvo ce se izvrsiti NEXT LINE, pa nakon 3s TIMEOUT
+
+      setInterval(function(){  //poziva funkciju u intervalima od 3000ms 
+        console.log('interval');
+      },3000);
+*/  
+
+      [1, 2, 3, 4, 5].forEach(function(value, index){
+        if(value === 3){
+          return;               //radi kao continue u obinoj for petlji, za BREAK nemamo alternativu, pa koristimo obicnu for petlju
+        }
+        console.log(index);
+        console.log(value);
+      });
+
+    
+
+    </script>
+  </body>
+</html>
